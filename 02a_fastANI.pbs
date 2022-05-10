@@ -1,0 +1,42 @@
+#PBS -N fastANI
+#PBS -l nodes=1:ppn=5
+#PBS -l mem=20gb
+#PBS -l walltime=12:00:00
+#PBS -q inferno     
+#PBS -A GT-ktk3-CODA20
+#PBS -o 00a_log/02a_fastANI_${n}.out
+#PBS -e 00a_log/02a_fastANI_${n}.err
+
+## Runs all verse all fastANI on directory of genomes
+## Uses gnu parallel to speed it up
+## fastANI must be installed in the user path
+
+module load parallel/20190222
+
+cd $PBS_O_WORKDIR
+
+if [ ! -d ${oDir}/${n} ]; then mkdir ${oDir}/${n}; fi
+
+gd_array=(${fDir}/*fna)
+gList=Temp_Genome_List_${n}.txt
+oList=Temp_Output_list_${n}.txt
+
+# clean up temp gList
+rm ${gList} ${oList}
+
+# write list of genomes to pass to fastANI
+for f in ${gd_array[@]}; do echo $f >> ${gList}; x=`basename $f | cut -d. -f1`; echo ${oDir}/${n}/${x}.ani >> ${oList}; done > ${gList}
+
+
+# run fastANI in parallel
+parallel -j 5 --joblog 00a_log/02_parallel_${n}.log 'fastANI -r {1} --ql {3} -o {2}; echo {1}' :::: ${gList} ::::+ ${oList} ::: ${gList}
+
+# clean up temp gList
+rm ${gList} ${oList}
+
+## Run log:
+## qsub -v fDir=Genome_Directory,oDir=Output_Directory,n=Species_name ../../00b_PBS/02_fastANI.pbs
+## for d in Complete/*; do n=`basename $d`; qsub -v fDir=$d,oDir=fastANI_Complete,n=$n ../../00b_PBS/02_fastANI.pbs; done
+## for d in Chromosome/*; do n=`basename $d`; qsub -v fDir=$d,oDir=fastANI_Chromosome,n=$n ../../00b_PBS/02_fastANI.pbs; done
+## for d in Scaffold/*; do n=`basename $d`; qsub -v fDir=$d,oDir=fastANI_Scaffold,n=$n ../../00b_PBS/02_fastANI.pbs; done
+## for d in Contig/*; do n=`basename $d`; qsub -v fDir=$d,oDir=fastANI_Contig,n=$n ../../00b_PBS/02_fastANI.pbs; done
