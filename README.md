@@ -59,7 +59,7 @@ mkdir bacteria bacteria/Complete
 ### Download Complete level bacteria genomes to species directories
 
 ```bash
-> while read p; do t=bacteria; l=Complete; n=`echo -e "$p" | cut -f1`; m=`echo -e "$p" | cut -f2`; if [ ! -d ${t}/${l}/$n ]; then mkdir ${t}/${l}/$n; fi; wget -P ${t}/${l}/$n $m; done < ../01a_Data_Download_Prep/bacteria_Complete_ftps.sh
+while read p; do t=bacteria; l=Complete; n=`echo -e "$p" | cut -f1`; m=`echo -e "$p" | cut -f2`; if [ ! -d ${t}/${l}/$n ]; then mkdir ${t}/${l}/$n; fi; wget -P ${t}/${l}/$n $m; done < ../01a_Data_Download_Prep/bacteria_Complete_ftps.sh
 ```
 
 ### Check we got them all
@@ -71,7 +71,6 @@ while read p; do t=bacteria; l=Complete; n=`echo -e "$p" | cut -f1`; m=`echo -e 
 ### Unzip them
 
 ```bash
-gunzip 01b_Genomes/archaea/*/*/*
 qsub -v f=01b_Genomes/bacteria/*/*/* 00b_PBS/01_gunzip.pbs
 ```
 
