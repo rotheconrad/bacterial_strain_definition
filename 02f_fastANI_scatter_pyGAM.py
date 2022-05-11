@@ -325,14 +325,14 @@ def fastANI_scatter_plot(
         g.ax_joint.plot(
                     XX,
                     gam.predict(XX),
-                    color='#2171b5',
+                    color='#FCEE21',
                     linestyle='--',
                     linewidth=1.0,
                     )
         g.ax_joint.plot(
                     XX,
                     gam.prediction_intervals(XX, width=0.95),
-                    color='#9ecae1',
+                    color='#CBCB2C',
                     linestyle='--',
                     linewidth=1.0
                     )
