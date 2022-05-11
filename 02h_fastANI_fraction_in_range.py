@@ -56,7 +56,7 @@ def gather_data(ani, xmin, xmax):
     total99 = len([i for i in xs if i >= 99])
 
     print(
-        '\nGenome pair counts:'
+        '\nGenome pair counts:\n'
         f'\t(A) Genome pairs in range [{xmin}, {xmax}]: {inrange}\n'
         f'\t(B) Total genome pairs: {total}\n'
         f'\t(C) Genome pairs >= 95% ANI: {total95}\n'
@@ -64,7 +64,7 @@ def gather_data(ani, xmin, xmax):
         f'\t(E) Genome pairs >= 97% ANI: {total97}\n'
         f'\t(F) Genome pairs >= 98% ANI: {total98}\n'
         f'\t(G) Genome pairs >= 99% ANI: {total99}\n'
-        '\nFraction of A in B-G:'
+        '\nFraction of A in B-G:\n'
         f'\t(A) / (B) = {inrange/total:.4f}\n'
         f'\t(A) / (C) = {inrange/total95:.4f}\n'
         f'\t(A) / (D) = {inrange/total96:.4f}\n'
