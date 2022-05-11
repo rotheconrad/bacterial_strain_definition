@@ -27,25 +27,25 @@ curl ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq/README.txt -o NCBI_genomes_README
 Genomes are divided into four assembly levels (Complete, Chromosome, Scaffold, and Contig).
 
 We wrote a Python script to parse this file.
-> 	- It creates summaries counting the number of genomes at each assembly level for each species.
-> 	- It also creates files to download genomes for each species at each assembly level.
-> 	- The download file can be created based on the number of genomes available at each level for each species.
-> 	- We chose n=10 for complete genomes. This creates a download list to retrieve the genome.fna file through ftp download for only species with at least 10 complete genomes.
-> 	- The script also filters for the "latest" version of the genome and ignores other genome versions.
+ - It creates summaries counting the number of genomes at each assembly level for each species.
+ - It also creates files to download genomes for each species at each assembly level.
+ - The download file can be created based on the number of genomes available at each level for each species.
+ - We chose n=10 for complete genomes. This creates a download list to retrieve the genome.fna file through ftp download for only species with at least 10 complete genomes.
+ - The script also filters for the "latest" version of the genome and ignores other genome versions.
 
 ```bash
 python 00a_Parse_NCBI_Assembly_Summary.py -i refseq_bacteria_assembly_summary.txt -p bacteria -n 10
 ```
 
-> Output files:
-> 	- bacteria_Chromosome_counts.tsv
-> 	- bacteria_Chromosome_ftps.sh
-> 	- bacteria_Complete_counts.tsv
-> 	- bacteria_Complete_ftps.sh
-> 	- bacteria_Contig_counts.tsv
-> 	- bacteria_Contig_ftps.sh
-> 	- bacteria_Scaffold_counts.tsv
-> 	- bacteria_Scaffold_ftps.sh
+Output files:
+ - bacteria_Chromosome_counts.tsv
+ - bacteria_Chromosome_ftps.sh
+ - bacteria_Complete_counts.tsv
+ - bacteria_Complete_ftps.sh
+ - bacteria_Contig_counts.tsv
+ - bacteria_Contig_ftps.sh
+ - bacteria_Scaffold_counts.tsv
+ - bacteria_Scaffold_ftps.sh
 
 ### Download Complete level bacteria genomes to species directories
 
@@ -77,7 +77,6 @@ qsub -v f=01b_Complete_bacteria_genomes/*/* 01c_gunzip.pbs
 ---
 
 April 21 2022
-In Directory: 04_Recombination/01b_Genomes/bacteria
 
 ### Run one vs all fastANI among genomes of each species.
 
@@ -128,22 +127,22 @@ python 02g_fastANI_ANIdist_KDEs.py -i fastANI_Complete_All.ani
 python 02h_fastANI_fraction_in_range.py -i fastANI_Complete_All.ani -xmin 99.2 -xmax 99.8
 ```
 
-> Genome pair counts:
-> 	- (A) Genome pairs in range [99.2, 99.8]: 235527
-> 	- (B) Total genome pairs: 4455818
-> 	- (C) Genome pairs >= 95% ANI: 4344982
-> 	- (D) Genome pairs >= 96% ANI: 4280042
-> 	- (E) Genome pairs >= 97% ANI: 3637508
-> 	- (F) Genome pairs >= 98% ANI: 2677076
-> 	- (G) Genome pairs >= 99% ANI: 934658
->
-> Fraction of A in B-G:
-> 	- (A) / (B) = 0.0529
-> 	- (A) / (C) = 0.0542
-> 	- (A) / (D) = 0.0550
-> 	- (A) / (E) = 0.0647
-> 	- (A) / (F) = 0.0880
-> 	- (A) / (G) = 0.2520
+Genome pair counts:
+ - (A) Genome pairs in range [99.2, 99.8]: 235527
+ - (B) Total genome pairs: 4455818
+ - (C) Genome pairs >= 95% ANI: 4344982
+ - (D) Genome pairs >= 96% ANI: 4280042
+ - (E) Genome pairs >= 97% ANI: 3637508
+ - (F) Genome pairs >= 98% ANI: 2677076
+ - (G) Genome pairs >= 99% ANI: 934658
+
+Fraction of A in B-G:
+ - (A) / (B) = 0.0529
+ - (A) / (C) = 0.0542
+ - (A) / (D) = 0.0550
+ - (A) / (E) = 0.0647
+ - (A) / (F) = 0.0880
+ - (A) / (G) = 0.2520
 
 # STEP 03 ## Dorian
 ---
