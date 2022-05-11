@@ -56,19 +56,21 @@ def gather_data(ani, xmin, xmax):
     total99 = len([i for i in xs if i >= 99])
 
     print(
-        f'\nPoints in range [{xmin}, {xmax}]: {inrange}\n'
-        f'Total points: {total}\n'
-        f'Points >= 95% ANI: {total95}\n'
-        f'Points >= 96% ANI: {total96}\n'
-        f'Points >= 97% ANI: {total97}\n'
-        f'Points >= 98% ANI: {total98}\n'
-        f'Points >= 99% ANI: {total99}\n'
-        f'Fraction from range / Total: {inrange/total:.4f}\n'
-        f'Fraction from range / 95% Total: {inrange/total95:.4f}\n'
-        f'Fraction from range / 96% Total: {inrange/total96:.4f}\n'
-        f'Fraction from range / 97% Total: {inrange/total97:.4f}\n'
-        f'Fraction from range / 98% Total: {inrange/total98:.4f}\n'
-        f'Fraction from range / 99% Total: {inrange/total99:.4f}\n'
+        '\nGenome pair counts:'
+        f'\t(A) Genome pairs in range [{xmin}, {xmax}]: {inrange}\n'
+        f'\t(B) Total genome pairs: {total}\n'
+        f'\t(C) Genome pairs >= 95% ANI: {total95}\n'
+        f'\t(D) Genome pairs >= 96% ANI: {total96}\n'
+        f'\t(E) Genome pairs >= 97% ANI: {total97}\n'
+        f'\t(F) Genome pairs >= 98% ANI: {total98}\n'
+        f'\t(G) Genome pairs >= 99% ANI: {total99}\n'
+        '\nFraction of A in B-G:'
+        f'\t(A) / (B) = {inrange/total:.4f}\n'
+        f'\t(A) / (C) = {inrange/total95:.4f}\n'
+        f'\t(A) / (D) = {inrange/total96:.4f}\n'
+        f'\t(A) / (E) = {inrange/total97:.4f}\n'
+        f'\t(A) / (F) = {inrange/total98:.4f}\n'
+        f'\t(A) / (G) = {inrange/total99:.4f}\n'
         )
 
     return True

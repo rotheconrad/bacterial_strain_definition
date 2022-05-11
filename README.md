@@ -101,10 +101,29 @@ python ../../00c_Scripts/02b_fastANI_scatter_pyGAM.py -i fastANI_Complete_All.an
 python ../../00c_Scripts/02b_fastANI_scatter_pyGAM.py -i fastANI_Complete_All.ani -s All_species -o fastANI_Complete_All_98_density_pyGAM.pdf -xmin 98 -t 0.5 -z True -g True
 ```
 
+![Shared genome fraction vs ANI plot for 330 species constrained at 95% ANI.](/figures/fastANI_Complete_All_95_density_pyGAM.pdf)
+
+![Shared genome fraction vs ANI plot for 330 species constrained at 98% ANI.](/figures/fastANI_Complete_All_98_density_pyGAM.pdf)
+
 #### Range fraction count
 ```bash
 python ../../00c_Scripts/02d_fastANI_fraction_in_range.py -i fastANI_Complete_All.ani -xmin 99.2 -xmax 99.8
 ```
+
+> Genome pair counts:	(A) Genome pairs in range [99.2, 99.8]: 235527
+> 	(B) Total genome pairs: 4455818
+> 	(C) Genome pairs >= 95% ANI: 4344982
+> 	(D) Genome pairs >= 96% ANI: 4280042
+> 	(E) Genome pairs >= 97% ANI: 3637508
+> 	(F) Genome pairs >= 98% ANI: 2677076
+> 	(G) Genome pairs >= 99% ANI: 934658
+
+> Fraction of A in B-G:	(A) / (B) = 0.0529
+> 	(A) / (C) = 0.0542
+> 	(A) / (D) = 0.0550
+> 	(A) / (E) = 0.0647
+> 	(A) / (F) = 0.0880
+> 	(A) / (G) = 0.2520
 
 # STEP 03 ## Dorian
 ---
