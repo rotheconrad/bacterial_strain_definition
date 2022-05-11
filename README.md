@@ -101,9 +101,9 @@ python ../../00c_Scripts/02b_fastANI_scatter_pyGAM.py -i fastANI_Complete_All.an
 python ../../00c_Scripts/02b_fastANI_scatter_pyGAM.py -i fastANI_Complete_All.ani -s All_species -o fastANI_Complete_All_98_density_pyGAM.pdf -xmin 98 -t 0.5 -z True -g True
 ```
 
-![Shared genome fraction vs ANI plot for 330 species constrained at 95% ANI.](figures/fastANI_Complete_All_95_density_pyGAM.pdf)
+![Shared genome fraction vs ANI plot for 330 species constrained at 95% ANI.](/figures/fastANI_Complete_All_95_density_pyGAM.png)
 
-![Shared genome fraction vs ANI plot for 330 species constrained at 98% ANI.](figures/fastANI_Complete_All_98_density_pyGAM.pdf)
+![Shared genome fraction vs ANI plot for 330 species constrained at 98% ANI.](/figures/fastANI_Complete_All_98_density_pyGAM.png)
 
 #### Range fraction count
 ```bash
