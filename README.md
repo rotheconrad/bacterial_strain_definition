@@ -50,9 +50,9 @@ python 00a_Parse_NCBI_Assembly_Summary.py -i refseq_bacteria_assembly_summary.tx
 ### Download Complete level bacteria genomes to species directories
 
 Download genomes:
-Date: Apr 20 2022
-Total Species with complete genomes >= 10: 330
-Total genomes from these 330 species: 18,153
+ - Date: Apr 20 2022
+ - Total Species with complete genomes >= 10: 330
+ - Total genomes from these 330 species: 18,153
 
 ```bash
 mkdir 01b_Complete_bacteria_genomes
@@ -129,19 +129,19 @@ python 02h_fastANI_fraction_in_range.py -i fastANI_Complete_All.ani -xmin 99.2 -
 ```
 
 > Genome pair counts:	(A) Genome pairs in range [99.2, 99.8]: 235527
-> 	(B) Total genome pairs: 4455818
-> 	(C) Genome pairs >= 95% ANI: 4344982
-> 	(D) Genome pairs >= 96% ANI: 4280042
-> 	(E) Genome pairs >= 97% ANI: 3637508
-> 	(F) Genome pairs >= 98% ANI: 2677076
-> 	(G) Genome pairs >= 99% ANI: 934658
-
+> 	- (B) Total genome pairs: 4455818
+> 	- (C) Genome pairs >= 95% ANI: 4344982
+> 	- (D) Genome pairs >= 96% ANI: 4280042
+> 	- (E) Genome pairs >= 97% ANI: 3637508
+> 	- (F) Genome pairs >= 98% ANI: 2677076
+> 	- (G) Genome pairs >= 99% ANI: 934658
+>
 > Fraction of A in B-G:	(A) / (B) = 0.0529
-> 	(A) / (C) = 0.0542
-> 	(A) / (D) = 0.0550
-> 	(A) / (E) = 0.0647
-> 	(A) / (F) = 0.0880
-> 	(A) / (G) = 0.2520
+> 	- (A) / (C) = 0.0542
+> 	- (A) / (D) = 0.0550
+> 	- (A) / (E) = 0.0647
+> 	- (A) / (F) = 0.0880
+> 	- (A) / (G) = 0.2520
 
 # STEP 03 ## Dorian
 ---
