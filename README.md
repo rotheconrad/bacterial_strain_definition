@@ -166,6 +166,5 @@ Fraction of A in B-G:
  - (A) / (G) = 0.2520
 
 # STEP 03 ## Dorian
----
 
 We can add dorians work here.
