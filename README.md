@@ -1,4 +1,5 @@
-# bacterial_strain_definition (May 2022)
+# A natural definition for a bacterial strain (May 2022)
+
 Contains the code and workflow for the bacterial strain definition paper with Kostas Kostantinidis
 
 # Required packages for Python.
