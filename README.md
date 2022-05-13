@@ -24,7 +24,7 @@ Contains the code and workflow for the bacterial strain definition paper with Ko
 1. Servén D., Brummitt C. (2018). pyGAM: Generalized Additive Models in Python. Zenodo. DOI: 10.5281/zenodo.1208723
 
 # STEP 01: Get the data
----
+
 I chose to download data from NCBI through the FTP access.
 NCBI provides current genome summary for genebank or refseq.
 
@@ -96,7 +96,6 @@ qsub -v f=01b_Complete_bacteria_genomes/*/* 01c_gunzip.pbs
 ```
 
 # STEP 02: Run All vs All fastANI for each species
----
 
 April 21 2022
 
