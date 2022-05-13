@@ -108,7 +108,7 @@ mkdir 00a_log 02a_fastANI_OnevAll
 for d in 01b_Complete_bacteria_genomes/*; do n=`basename $d`; qsub -v fDir=$d,oDir=02a_fastANI_OnevAll,n=$n 02b_fastANI.pbs; done
 ```
 
-#### Concate files
+#### Concatenate files
 
 ```bash
 mkdir 02c_fastANI_AllvAll
