@@ -584,7 +584,7 @@ def main():
         if n > 10000: z = True
         else: z = None
         _ = fastANI_scatter_plot(
-            df, n, 'All species', outfile, xmin, xmax, xstep, p, a, z, g, c
+            df, n, 'All_species', outfile, xmin, xmax, xstep, p, a, z, g, c
             )
     if single_species:
         for species in df['species'].unique():

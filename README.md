@@ -118,7 +118,9 @@ cat 02c_fastANI_AllvAll/*.ani >> 02d_fastANI_Complete_All.ani
 
 #### Plots
 
-Plots for each species:
+##### Plots for each species:
+
+Create separate plots for each species with x-axis minimum of 95% and 98% ANI.
 
 ```bash
 mkdir 02e_species_plots_95 02e_species_plots_98
@@ -126,22 +128,31 @@ python 02f_fastANI_scatter_pyGAM.py -i fastANI_Complete_All.ani -o 02e_species_p
 python 02f_fastANI_scatter_pyGAM -i fastANI_Complete_All.ani -o 02e_species_plots_98/ANI_98_scatter -xmin 98 -t 0.5 -s True
 ```
 
-Plots for all 330 species combined:
+##### Plots for all 330 species combined:
+
+Create a plot with all data from all species combined and x-axis minimum of 95% ANI.
 
 ```bash
 python 02f_fastANI_scatter_pyGAM.py -i fastANI_Complete_All.ani -o ANI_95_scatter -l True -g True
+```
 
+![Shared genome fraction vs ANI plot for 330 species constrained at 95% ANI.](/figures/ANI_95_scatter_All_species.png)
+
+Create a plot with all data from all species combined and x-axis minimum of 98% ANI.
+
+```bash
 python 02f_fastANI_scatter_pyGAM.py -i fastANI_Complete_All.ani -o ANI_98_scatter -xmin 98 -t 0.5 -l True -g True
 ```
 
-![Shared genome fraction vs ANI plot for 330 species constrained at 95% ANI.](/figures/fastANI_Complete_All_95_density_pyGAM.png)
+![Shared genome fraction vs ANI plot for 330 species constrained at 98% ANI.](/figures/ANI_98_scatter_All_species.png)
 
-![Shared genome fraction vs ANI plot for 330 species constrained at 98% ANI.](/figures/fastANI_Complete_All_98_density_pyGAM.png)
+Create a plot with subsampled data. r=10 random selects 10 genomes from each species and e=100 repeats the random selection 100 times. Random sampling is with replacement.
 
 ```bash
-python 02g_fastANI_ANIdist_KDEs.py -i fastANI_Complete_All.ani
--o fastANI_Complete_All_KDEs.pdf
-```
+python bacterial_strain_definition/02f_fastANI_scatter_pyGAM.py -i fastANI_Complete_All.ani -xmin 98 -t 0.5 -g True -r 10 -e 100 -l True -o ANI_98_subsamples_r10_e100
+````
+
+![Same plot with subsampled data](figures/ANI_98_subsamples_r10_e100_All_species.png)
 
 #### Range fraction count
 ```bash
