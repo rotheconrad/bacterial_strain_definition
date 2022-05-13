@@ -1,7 +1,7 @@
 # bacterial_strain_definition (May 2022)
 Contains the code and workflow for the bacterial strain definition paper with Kostas Kostantinidis
 
-# Custom Python code in this workflow requires the following packages.
+# Required packages for Python.
 
 - [pandas](https://pandas.pydata.org/) 
 - [numpy](https://numpy.org/)
