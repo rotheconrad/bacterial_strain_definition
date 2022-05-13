@@ -144,7 +144,7 @@ def gather_subsampled_data(ani_file, xmin, xmax, r, e):
     for i in range(e):
         # subsample r genome pairs per species and write data to arrays
         for species, gpairs in name_dict.items():
-            npairs = gpairs.keys()
+            npairs = list(gpairs.keys())
             vals = gpairs.values()
             # i[1] = ani
             testani = [i[1] for i in vals if i[1] >= xmin and i[1] <= xmax]
@@ -575,7 +575,7 @@ def main():
 
     # read in the data
     if r > 1:
-        df, n = gather_subsampled_data(infile, xmin, xmax, r)
+        df, n = gather_subsampled_data(infile, xmin, xmax, r, e)
     else:
         df, n = gather_data(infile, xmin, xmax)
 
