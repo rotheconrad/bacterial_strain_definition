@@ -100,17 +100,17 @@ cat 02c_fastANI_AllvAll/*.ani >> 02d_fastANI_Complete_All.ani
 Plots for each species:
 
 ```bash
-mkdir 02e_species_plots_95
-for f in 02c_fastANI_AllvAll/*.ani; do n=`basename $f | cut -d. -f1`; python 02f_fastANI_scatter_pyGAM -i $f -o 02e_species_plots_95/${n}.pdf; done
-mkdir 02e_species_plots_98
-for f in 02c_fastANI_AllvAll/*.ani; do n=`basename $f | cut -d. -f1`; python 02f_fastANI_scatter_pyGAM -i $f -o 02e_species_plots_98/${n}.pdf -xmin 98 -t 0.5; done
+mkdir 02e_species_plots_95 02e_species_plots_98
+python 02f_fastANI_scatter_pyGAM.py -i fastANI_Complete_All.ani -o 02e_species_plots_95/ANI_95_scatter -s True
+python 02f_fastANI_scatter_pyGAM -i fastANI_Complete_All.ani -o 02e_species_plots_98/ANI_98_scatter -xmin 98 -t 0.5 -s True
 ```
 
 Plots for all 330 species combined:
 
 ```bash
-python 02f_fastANI_scatter_pyGAM.py -i fastANI_Complete_All.ani -s All_species -o fastANI_Complete_All_95_density_pyGAM.pdf -z True -g True
-python 02f_fastANI_scatter_pyGAM.py -i fastANI_Complete_All.ani -s All_species -o fastANI_Complete_All_98_density_pyGAM.pdf -xmin 98 -t 0.5 -z True -g True
+python 02f_fastANI_scatter_pyGAM.py -i fastANI_Complete_All.ani -o ANI_95_scatter -l True -g True
+
+python 02f_fastANI_scatter_pyGAM.py -i fastANI_Complete_All.ani -o ANI_98_scatter -xmin 98 -t 0.5 -l True -g True
 ```
 
 ![Shared genome fraction vs ANI plot for 330 species constrained at 95% ANI.](/figures/fastANI_Complete_All_95_density_pyGAM.png)
