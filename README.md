@@ -56,7 +56,7 @@ We wrote a Python script to parse this file.
  - The script also filters for the "latest" version of the genome and ignores other genome versions.
 
 ```bash
-python 00a_Parse_NCBI_Assembly_Summary.py -i refseq_bacteria_assembly_summary.txt -p bacteria -n 10
+python 00b_Python/01a_Parse_NCBI_Assembly_Summary.py -i refseq_bacteria_assembly_summary.txt -p bacteria -n 10
 ```
 
 Output files:

@@ -220,6 +220,11 @@ def gather_data(ani_file, xmin, xmax):
     df = df[df['xs'] >= xmin]
     n = len(df)
 
+    total_species = len(set(data_dict['species']))
+    filtered_species = len(df['species'].unique())
+    print(f'\nTotal species in file: {total_species}')
+    print(f'Species between {xmin}-{xmax} ANI: {filtered_species}')
+
     return df, n
 
 
@@ -365,7 +370,7 @@ def fastANI_scatter_plot(
         fontsize=12, y=-0.02
         )
     gg.ax_joint.set_ylabel(
-        'Shared / total fragments',
+        'Shared genome fraction', # 'Shared / total fragments'
         fontsize=12, x=-0.02
         )
     gg.ax_joint.text(
