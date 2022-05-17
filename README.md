@@ -28,7 +28,7 @@ Contains the code and workflow for the bacterial strain definition paper with Ko
 Download data from NCBI through the FTP access.  
 NCBI provides current genome summary files for genebank or refseq.
 
-Since this analysis is focused on bacteria only, retrive the NCBI assembly summary from from the refseq, bacteria subdirectory.
+Since this analysis is focused on bacteria only, retrive the NCBI assembly summary from the refseq, bacteria subdirectory.
 
 Date: Apr 20 2022
 
@@ -38,17 +38,20 @@ curl ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq/bacteria/assembly_summary.txt -o 
 
 ### Description and parsing of NCBI's assembly summary file
 
+NCBI provides information on the files in their database. Retrieve these files for more information.
+
 ```bash
 curl ftp://ftp.ncbi.nlm.nih.gov/genomes/README_assembly_summary.txt -o NCBI_genomes_README_assembly_summary.txt
 curl ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq/README.txt -o NCBI_genomes_README.txt
 ```
+
 Genomes are divided into four assembly levels (Complete, Chromosome, Scaffold, and Contig).
 
-We wrote a Python script to parse this file.
+I wrote a Python script to parse this file.
  - It creates summaries counting the number of genomes at each assembly level for each species.
  - It also creates files to download genomes for each species at each assembly level.
- - The download file can be created based on the number of genomes available at each level for each species.
- - We chose n=10 for complete genomes. This creates a download list to retrieve the genome.fna file through ftp download for only species with at least 10 complete genomes.
+ - The download file can be created based on the number of genomes available at each level for each species with the -n flag.
+ - This analysis uses n=10 and complete level genomes.
  - The script also filters for the "latest" version of the genome and ignores other genome versions.
 
 ```bash
