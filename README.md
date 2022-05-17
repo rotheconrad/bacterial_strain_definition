@@ -70,11 +70,6 @@ Output files:
 
 ### Download Complete level bacteria genomes to species directories
 
-Download genomes:
- - Date: Apr 20 2022
- - Total Species with complete genomes >= 10: 330
- - Total genomes from these 330 species: 18,153
-
 ```bash
 mkdir 01a_Complete_bacteria_genomes
 while read p; do d=01a_Complete_bacteria_genomes; n=`echo -e "$p" | cut -f1`; m=`echo -e "$p" | cut -f2`; g=`echo $m | rev | cut -d/ -f1 | rev`; if [ ! -d ${d}/$n ]; then mkdir ${d}/$n; fi; curl ${m} -o ${d}/${n}/${g}; done < bacteria_Complete_ftps.sh
@@ -100,6 +95,16 @@ mv 01a_Complete_bacteria_genomes/\[Haemophilus\]_ducreyi/ 01a_Complete_bacteria_
 mkdir 00c_log
 for d in 01a_Complete_bacteria_genomes/*; do qsub -v f=${d}/* 00a_PBS/01a_gunzip.pbs; done
 ```
+
+### Count number of species and genomes
+
+```bash
+echo 01a_Complete_bacteria_genomes/* | wc -w
+echo 01a_Complete_bacteria_genomes/*/*.fna | wc -w
+```
+
+330 Species.  
+18,153 Genomes.
 
 # STEP 02: Run All vs All fastANI for each species
 
