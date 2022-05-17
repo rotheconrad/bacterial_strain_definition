@@ -25,16 +25,12 @@ Contains the code and workflow for the bacterial strain definition paper with Ko
 
 # STEP 01: Get the data
 
-I chose to download data from NCBI through the FTP access.
-NCBI provides current genome summary for genebank or refseq.
+Download data from NCBI through the FTP access.  
+NCBI provides current genome summary files for genebank or refseq.
+
+Since this analysis is focused on bacteria only, retrive the NCBI assembly summary from from the refseq, bacteria subdirectory.
 
 Date: Apr 20 2022
-
-```bash
-curl ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq/assembly_summary_refseq.txt -o refseq_assembly_summary_refseq.txt
-```
-
-We want to focus on just bacteria so we will ignore the files above which include everything and work with the files listed below instead:
 
 ```bash
 curl ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq/bacteria/assembly_summary.txt -o refseq_bacteria_assembly_summary.txt
