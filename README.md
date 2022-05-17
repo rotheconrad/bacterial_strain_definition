@@ -77,22 +77,29 @@ Download genomes:
  - Total genomes from these 330 species: 18,153
 
 ```bash
-mkdir 01b_Complete_bacteria_genomes
-while read p; do d=01b_Complete_bacteria_genomes; n=`echo -e "$p" | cut -f1`; m=`echo -e "$p" | cut -f2`; g=`echo $m | rev | cut -d/ -f1 | rev`; if [ ! -d ${d}/$n ]; then mkdir ${d}/$n; fi; curl ${m} -o ${d}/${n}/${g}; done < bacteria_Complete_ftps.sh
+mkdir 01a_Complete_bacteria_genomes
+while read p; do d=01a_Complete_bacteria_genomes; n=`echo -e "$p" | cut -f1`; m=`echo -e "$p" | cut -f2`; g=`echo $m | rev | cut -d/ -f1 | rev`; if [ ! -d ${d}/$n ]; then mkdir ${d}/$n; fi; curl ${m} -o ${d}/${n}/${g}; done < bacteria_Complete_ftps.sh
 ```
 
 ### Check we got them all
 
 ```bash
-while read p; do d=01b_Complete_bacteria_genomes; n=`echo -e "$p" | cut -f1`; m=`echo -e "$p" | cut -f2`; g=`echo $m | rev | cut -d/ -f1 | rev`; if [ ! -s ${d}/$n/${g} ]; then echo $n $g "NOT COMPLETE DOWNLOADING"; curl ${m} -o ${d}/${n}/${g}; fi; done < bacteria_Complete_ftps.sh
+while read p; do d=01a_Complete_bacteria_genomes; n=`echo -e "$p" | cut -f1`; m=`echo -e "$p" | cut -f2`; g=`echo $m | rev | cut -d/ -f1 | rev`; if [ ! -s ${d}/$n/${g} ]; then echo $n $g "NOT COMPLETE DOWNLOADING"; curl ${m} -o ${d}/${n}/${g}; fi; done < bacteria_Complete_ftps.sh
+```
+
+*NOTE: One species, Haemophilus_ducreyi ends up with brackets in the directory name like this: [Haemophilus]_ducreyi. Rename this before proceeding.*
+
+```bash
+mv 01a_Complete_bacteria_genomes/\[Haemophilus\]_ducreyi/ 01a_Complete_bacteria_genomes/Haemophilus_ducreyi
 ```
 
 ### Unzip them
 
-*Used a PBS script on PACE cluster at GA Tech to gunzip genomes. Just ran it as one job and let it run a long time. Definitely quicker ways to set this up but it worked well enough.*
+*Used a PBS script on PACE cluster at GA Tech to gunzip genomes.*
 
 ```bash
-qsub -v f=01b_Complete_bacteria_genomes/*/* 01c_gunzip.pbs
+mkdir 00c_log
+for d in 01a_Complete_bacteria_genomes/*; do qsub -v f=${d}/* 00a_PBS/01a_gunzip.pbs; done
 ```
 
 # STEP 02: Run All vs All fastANI for each species
@@ -104,8 +111,8 @@ April 21 2022
 *Continued working on PACE cluster at GA Tech. Submitted a qsub job for each species and then used GNU parallel within each pbs script to execute one vs all fastANI processes for each genome. Concatenated them afterwords to create an all vs all fastANI file. This seemed to work way faster than the all vs all option for fastANI - especially for the species with lots of genomes.*
 
 ```bash
-mkdir 00a_log 02a_fastANI_OnevAll
-for d in 01b_Complete_bacteria_genomes/*; do n=`basename $d`; qsub -v fDir=$d,oDir=02a_fastANI_OnevAll,n=$n 02b_fastANI.pbs; done
+mkdir 02a_fastANI_OnevAll
+for d in 01a_Complete_bacteria_genomes/*; do n=`basename $d`; x=`echo ${d}/*fna | wc -w`; if [ ${x} -lt 100 ]; then q=02a_fastANI_reg.pbs; else q=02b_fastANI_high.pbs; fi; qsub -v fDir=${d},oDir=02a_fastANI_OnevAll,n=${n} 00a_PBS/${q}; done
 ```
 
 #### Concatenate files

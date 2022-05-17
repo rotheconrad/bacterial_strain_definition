@@ -1,0 +1,15 @@
+#PBS -N gunzip
+#PBS -l nodes=1:ppn=1
+#PBS -l mem=1gb
+#PBS -l walltime=12:00:00
+#PBS -q inferno     
+#PBS -A GT-ktk3-CODA20
+#PBS -o 00c_log/gunzip.out
+#PBS -e 00c_log/gunzip.err
+
+cd $PBS_O_WORKDIR
+
+gunzip $f
+
+## Run Log
+## for d in 01a_Complete_bacteria_genomes/*; do qsub -v f=${d}/* 00a_PBS/01a_gunzip.pbs; done

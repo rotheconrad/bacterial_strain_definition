@@ -1,0 +1,39 @@
+#PBS -N fastANI-reg
+#PBS -l nodes=1:ppn=5
+#PBS -l mem=20gb
+#PBS -l walltime=12:00:00
+#PBS -q inferno     
+#PBS -A GT-ktk3-CODA20
+#PBS -o 00c_log/02a_fastANI_${n}.out
+#PBS -e 00c_log/02a_fastANI_${n}.err
+
+## Runs all verse all fastANI on directory of genomes
+## Uses gnu parallel to speed it up
+## fastANI must be installed in the user path
+
+module load parallel/20190222
+
+cd $PBS_O_WORKDIR
+
+if [ ! -d ${oDir}/${n} ]; then mkdir ${oDir}/${n}; fi
+
+gd_array=(${fDir}/*fna)
+gList=Temp_Genome_List_${n}.txt
+oList=Temp_Output_list_${n}.txt
+
+# clean up temp gList
+if [ -s ${gList} ]; then rm ${gList}; fi
+if [ -s ${oList} ]; then rm ${oList}; fi
+
+# write list of genomes to pass to fastANI
+for f in ${gd_array[@]}; do echo $f >> ${gList}; x=`basename $f | cut -d. -f1`; echo ${oDir}/${n}/${x}.ani >> ${oList}; done > ${gList}
+
+
+# run fastANI in parallel
+parallel -j 5 --joblog 00a_log/02_parallel_${n}.log 'fastANI -r {1} --ql {3} -o {2}; echo {1}' :::: ${gList} ::::+ ${oList} ::: ${gList}
+
+# clean up temp gList
+rm ${gList} ${oList}
+
+## Run log:
+## for d in 01a_Complete_bacteria_genomes/*; do n=`basename $d`; x=`echo ${d}/*fna | wc -w`; if [ ${x} -lt 100 ]; then q=02a_fastANI_reg.pbs; else q=02b_fastANI_high.pbs; fi; qsub -v fDir=${d},oDir=02a_fastANI_OnevAll,n=${n} 00a_PBS/${q}; done

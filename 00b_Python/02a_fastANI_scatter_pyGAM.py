@@ -96,7 +96,7 @@ class TickRedrawer(matplotlib.artist.Artist):
 
 
 def subsample_gpairs(gpairs, npairs, r, xmin, xmax):
-    """ subsample r gpairs between [xmin, xmax] ANI """
+    """ subsample with replacement, r gpairs between [xmin, xmax] ANI """
     X = []
 
     while len(X) < r:
@@ -146,9 +146,11 @@ def gather_subsampled_data(ani_file, xmin, xmax, r, e):
         for species, gpairs in name_dict.items():
             npairs = list(gpairs.keys())
             vals = gpairs.values()
+            # Check for enough genome pairs in ANI range for the species
+            # 10 genomes minimum = 45 combinations of genome pairs minimum
             # i[1] = ani
             testani = [i[1] for i in vals if i[1] >= xmin and i[1] <= xmax]
-            if len(testani) < 30:
+            if len(testani) < 45:
                 #X = npairs
                 continue
             else:
@@ -167,6 +169,13 @@ def gather_subsampled_data(ani_file, xmin, xmax, r, e):
     df = df[df['xs'] <= xmax] 
     df = df[df['xs'] >= xmin]
     n = len(df)
+
+    total_species = set(data_dict['species'])
+    filtered_species = set(df['species'].unique())
+    diff_species = total_species - filtered_species
+    print(f'\nTotal species in file: {len(total_species)}')
+    print(f'Species between {xmin}-{xmax} ANI: {len(filtered_species)}')
+    print(f'Species not included: {diff_species}')
 
     return df, n
 
@@ -220,10 +229,12 @@ def gather_data(ani_file, xmin, xmax):
     df = df[df['xs'] >= xmin]
     n = len(df)
 
-    total_species = len(set(data_dict['species']))
-    filtered_species = len(df['species'].unique())
-    print(f'\nTotal species in file: {total_species}')
-    print(f'Species between {xmin}-{xmax} ANI: {filtered_species}')
+    total_species = set(data_dict['species'])
+    filtered_species = set(df['species'].unique())
+    diff_species = total_species - filtered_species
+    print(f'\nTotal species in file: {len(total_species)}')
+    print(f'Species between {xmin}-{xmax} ANI: {len(filtered_species)}')
+    print(f'Species not included: {diff_species}')
 
     return df, n
 
@@ -279,8 +290,8 @@ def fastANI_scatter_plot(
 
     # build plot
     gg = sns.JointGrid(x="xs", y="ys", data=df)
-    print('\nComputing KDEs for marginal plots.')
-    # x margin kde plot
+
+    # x margin hist plot
     sns.histplot(
             x=df["xs"],
             ax=gg.ax_marg_x,
@@ -288,7 +299,7 @@ def fastANI_scatter_plot(
             color=color,
             stat='probability'
             )
-    # y margin kde plot
+    # y margin hist plot
     sns.histplot(
             y=df["ys"],
             ax=gg.ax_marg_y,
