@@ -103,8 +103,7 @@ echo 01a_Complete_bacteria_genomes/* | wc -w
 echo 01a_Complete_bacteria_genomes/*/*.fna | wc -w
 ```
 
-330 Species.  
-18,153 Genomes.
+On April 20, 2022 there was a total of 18,153 genomes from 330 species with n ≥ 10 Complete level genomes.  
 
 # STEP 02: Run All vs All fastANI for each species
 
