@@ -2,6 +2,17 @@
 
 Contains the code and workflow for the bacterial strain definition paper with Kostas Kostantinidis
 
+# Required dependencies
+
+- [fastANI](https://github.com/ParBLiSS/FastANI)
+- [mlst](https://github.com/tseemann/mlst)
+
+### Reference
+
+1. Jain C, Rodriguez-R LM, Phillippy AM, Konstantinidis KT, Aluru S. High throughput ANI analysis of 90K prokaryotic genomes reveals clear species boundaries. Nature communications. 2018 Nov 30;9(1):1-8.
+2. Jolley, Keith A., and Martin CJ Maiden. "BIGSdb: scalable analysis of bacterial genome variation at the population level." BMC bioinformatics 11.1 (2010): 1-11.
+3. Seemann T, mlst Github https://github.com/tseemann/mlst
+
 # Required packages for Python.
 
 - [pandas](https://pandas.pydata.org/) 
