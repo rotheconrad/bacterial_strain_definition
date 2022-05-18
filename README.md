@@ -146,6 +146,15 @@ Create a plot with all data from all species combined and x-axis minimum of 95% 
 python 02f_fastANI_scatter_pyGAM.py -i fastANI_Complete_All.ani -o ANI_95_scatter -l True -g True
 ```
 
+> Total species in file: 330
+> Species between 95.0-100.0% ANI: 327
+> Species not included: {'Hymenobacter_sp', 'Nocardioides_sp', 'Sphingomonas_sp'}
+
+> Genome pairs between 95.0-100.0% ANI: 17283
+> Genome pair ratio 100%/remaining: 6.097821950042041e-05
+> Genome pair ratio >99.5%/remaining: 0.13132797424388395
+> Genome pair ratio >99%/remaining: 0.2735236434186895
+
 ![Shared genome fraction vs ANI plot for 330 species constrained at 95% ANI.](/figures/ANI_95_scatter_All_species.png)
 
 Create a plot with all data from all species combined and x-axis minimum of 98% ANI.
@@ -154,29 +163,62 @@ Create a plot with all data from all species combined and x-axis minimum of 98% 
 python 02f_fastANI_scatter_pyGAM.py -i fastANI_Complete_All.ani -o ANI_98_scatter -xmin 98 -t 0.5 -l True -g True
 ```
 
+> Total species in file: 330
+> Species between 98.0-100.0% ANI: 319
+> Species not included: {'Prochlorococcus_marinus', 'Nostoc_sp', 'Hymenobacter_sp', 'Nocardioides_sp', 'Lysobacter_sp', 'Haemophilus_parainfluenzae', 'Sphingomonas_sp', 'Candidatus_Planktophila', 'Polynucleobacter_sp', 'Sulfitobacter_sp', 'Flavobacterium_sp'}
+
+> Genome pairs between 98.0-100.0% ANI: 16487
+> Genome pair ratio 100%/remaining: 9.903150921030406e-05
+> Genome pair ratio >99.5%/remaining: 0.23231192512691817
+> Genome pair ratio >99%/remaining: 0.535614258671531
+
 ![Shared genome fraction vs ANI plot for 330 species constrained at 98% ANI.](/figures/ANI_98_scatter_All_species.png)
 
 Create a plot with subsampled data. r=10 random selects 10 genomes from each species and e=100 repeats the random selection 100 times. Random sampling is with replacement.
 
 ```bash
-python bacterial_strain_definition/02f_fastANI_scatter_pyGAM.py -i fastANI_Complete_All.ani -xmin 98 -t 0.5 -g True -r 10 -e 100 -l True -o ANI_98_subsamples_r10_e100
+python bacterial_strain_definition/00b_Python/02a_fastANI_scatter_pyGAM.py -i fastANI_Complete_All.ani -g True -r 10 -l True -o ANI_95_subsamples_r10_e100
+```
+
+> Total species in file: 256
+> Species between 95.0-100.0% ANI: 256
+> Species not included: set()
+
+> Genome pairs between 95.0-100.0% ANI: 15351
+> Genome pair ratio 100%/remaining: 0.0013690592607079992
+> Genome pair ratio >99.5%/remaining: 0.31694017181953804
+> Genome pair ratio >99%/remaining: 0.6260369161193613
+
+![Same plot with subsampled data](figures/ANI_95_subsamples_r10_e100_All_species.png)
+
+```bash
+python bacterial_strain_definition/00b_Python/02a_fastANI_scatter_pyGAM.py -i fastANI_Complete_All.ani -xmin 98 -t 0.5 -g True -r 10 -e 100 -l True -o ANI_98_subsamples_r10_e100
 ````
+
+> Total species in file: 215
+> Species between 98.0-100.0% ANI: 215
+> Species not included: set()
+
+> Genome pairs between 98.0-100.0% ANI: 13888
+> Genome pair ratio 100%/remaining: 0.001761236033584628
+> Genome pair ratio >99.5%/remaining: 0.5199072503110508
+> Genome pair ratio >99%/remaining: 1.1909488337018883
 
 ![Same plot with subsampled data](figures/ANI_98_subsamples_r10_e100_All_species.png)
 
 #### Range fraction count
 ```bash
-python 02h_fastANI_fraction_in_range.py -i fastANI_Complete_All.ani -xmin 99.2 -xmax 99.8
+python bacterial_strain_definition/00b_Python/02b_fastANI_fraction_in_range.py -i fastANI_Complete_All.ani -xmin 99.2 -xmax 99.8
 ```
 
 Genome pair counts:
  - (A) Genome pairs in range [99.2, 99.8]: 235527
- - (B) Total genome pairs: 4455818
- - (C) Genome pairs >= 95% ANI: 4344982
- - (D) Genome pairs >= 96% ANI: 4280042
- - (E) Genome pairs >= 97% ANI: 3637508
- - (F) Genome pairs >= 98% ANI: 2677076
- - (G) Genome pairs >= 99% ANI: 934658
+ - (B) Total genome pairs: 4455909
+ - (C) Genome pairs >= 95% ANI: 4345073
+ - (D) Genome pairs >= 96% ANI: 4280133
+ - (E) Genome pairs >= 97% ANI: 3637599
+ - (F) Genome pairs >= 98% ANI: 2677127
+ - (G) Genome pairs >= 99% ANI: 934709
 
 Fraction of A in B-G:
  - (A) / (B) = 0.0529

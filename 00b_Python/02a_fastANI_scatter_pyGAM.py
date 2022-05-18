@@ -111,7 +111,7 @@ def gather_subsampled_data(ani_file, xmin, xmax, r, e):
 
     print("\nReading data.")
     name_dict = defaultdict(dict)
-    data_dict = {'species': [], 'xs': [], 'ys': []}
+    data_dict = {'gpair': [], 'species': [], 'xs': [], 'ys': []}
 
     with open(ani_file, 'r') as f:
         for l in f:
@@ -159,6 +159,7 @@ def gather_subsampled_data(ani_file, xmin, xmax, r, e):
             for g in X:
                 ani = gpairs[g][1]
                 ratio = gpairs[g][2]
+                data_dict['gpair'].append(g)
                 data_dict['species'].append(species)
                 data_dict['xs'].append(ani)
                 data_dict['ys'].append(ratio)
@@ -170,14 +171,59 @@ def gather_subsampled_data(ani_file, xmin, xmax, r, e):
     df = df[df['xs'] >= xmin]
     n = len(df)
 
+    # compute and print out some things
     total_species = set(data_dict['species'])
     filtered_species = set(df['species'].unique())
     diff_species = total_species - filtered_species
     print(f'\nTotal species in file: {len(total_species)}')
-    print(f'Species between {xmin}-{xmax} ANI: {len(filtered_species)}')
+    print(f'Species between {xmin}-{xmax}% ANI: {len(filtered_species)}')
     print(f'Species not included: {diff_species}')
 
+    total_genomes = count_genomes(df)
+    ratios = get_ratios(df)
+
+    print(f'\n\nGenome pairs between {xmin}-{xmax}% ANI: {total_genomes}')
+    print(f'Genome pair ratio 100%/remaining: {ratios[0]}')
+    print(f'Genome pair ratio >99.5%/remaining: {ratios[1]}')
+    print(f'Genome pair ratio >99%/remaining: {ratios[2]}')
+
     return df, n
+
+
+def count_genomes(df):
+
+    # use a dict to track unique genome names
+    # duplicate keys are automatically replaced
+    genome_count = {}
+    # get the list of genome pairs
+    genome_pair_list = df['gpair'].to_list()
+    # read through the list, cut out genome names and store
+    for gpair in genome_pair_list:
+        X = gpair.split('-')
+        g1 = X[0]
+        g2 = X[1]
+        genome_count[g1] = ''
+        genome_count[g2] = ''
+
+    total_genomes = len(genome_count)
+
+    return total_genomes
+
+
+def get_ratios(df):
+
+    x = df['xs']
+
+    x100 = len([i for i in x if i == 100])
+    d100 = len([i for i in x if i < 100])
+    x995 = len([i for i in x if i >= 99.5])
+    d995 = len([i for i in x if i < 99.5])
+    x99 = len([i for i in x if i >= 99])
+    d99 = len([i for i in x if i < 99])
+
+    ratios = [x100/d100, x995/d995, x99/d99]
+
+    return ratios
 
 
 def gather_data(ani_file, xmin, xmax):
@@ -185,7 +231,7 @@ def gather_data(ani_file, xmin, xmax):
 
     print("\nReading data.")
     name_dict = {}
-    data_dict = {'species': [], 'xs': [], 'ys': []}
+    data_dict = {'gpair': [],'species': [], 'xs': [], 'ys': []}
 
     with open(ani_file, 'r') as f:
         for l in f:
@@ -216,25 +262,35 @@ def gather_data(ani_file, xmin, xmax):
                 name_dict[gname] = [tfrac, ani, ratio, species]
 
     # write data to arrays
-    for gpairs, metrics in name_dict.items():
+    for gpair, metrics in name_dict.items():
         ani = metrics[1]
         ratio = metrics[2]
         species = metrics[3]
         data_dict['xs'].append(ani)
         data_dict['ys'].append(ratio)
         data_dict['species'].append(species)
+        data_dict['gpair'].append(gpair)
     # convert to dataframe
     df = pd.DataFrame(data_dict)
     df = df[df['xs'] <= xmax] 
     df = df[df['xs'] >= xmin]
     n = len(df)
 
+    # compute and print out some things
     total_species = set(data_dict['species'])
     filtered_species = set(df['species'].unique())
     diff_species = total_species - filtered_species
     print(f'\nTotal species in file: {len(total_species)}')
-    print(f'Species between {xmin}-{xmax} ANI: {len(filtered_species)}')
+    print(f'Species between {xmin}-{xmax}% ANI: {len(filtered_species)}')
     print(f'Species not included: {diff_species}')
+
+    total_genomes = count_genomes(df)
+    ratios = get_ratios(df)
+
+    print(f'\n\nGenome pairs between {xmin}-{xmax}% ANI: {total_genomes}')
+    print(f'Genome pair ratio 100%/remaining: {ratios[0]}')
+    print(f'Genome pair ratio >99.5%/remaining: {ratios[1]}')
+    print(f'Genome pair ratio >99%/remaining: {ratios[2]}')
 
     return df, n
 
