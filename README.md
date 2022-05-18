@@ -7,7 +7,7 @@ Contains the code and workflow for the bacterial strain definition paper with Ko
 - [fastANI](https://github.com/ParBLiSS/FastANI)
 - [mlst](https://github.com/tseemann/mlst)
 
-### Reference
+### References
 
 1. Jain C, Rodriguez-R LM, Phillippy AM, Konstantinidis KT, Aluru S. High throughput ANI analysis of 90K prokaryotic genomes reveals clear species boundaries. Nature communications. 2018 Nov 30;9(1):1-8.
 2. Jolley, Keith A., and Martin CJ Maiden. "BIGSdb: scalable analysis of bacterial genome variation at the population level." BMC bioinformatics 11.1 (2010): 1-11.
@@ -39,7 +39,7 @@ Contains the code and workflow for the bacterial strain definition paper with Ko
 Download data from NCBI through the FTP access.  
 NCBI provides current genome summary files for genebank or refseq.
 
-Since this analysis is focused on bacteria only, retrive the NCBI assembly summary from the refseq, bacteria subdirectory.
+Since this analysis is focused on bacteria only, retrieve the NCBI assembly summary from the refseq, bacteria subdirectory.
 
 Date: Apr 20 2022
 
@@ -185,7 +185,7 @@ python 02f_fastANI_scatter_pyGAM.py -i fastANI_Complete_All.ani -o ANI_98_scatte
 
 ![Shared genome fraction vs ANI plot for 330 species constrained at 98% ANI.](/figures/ANI_98_scatter_All_species.png)
 
-Create a plot with subsampled data. r=10 random selects 10 genomes from each species and e=100 repeats the random selection 100 times. Random sampling is with replacement.
+Create a plot with subsampled data. r=10 randomly selects 10 genomes from each species and e=100 repeats the random selection 100 times. Random sampling is with replacement.
 
 ```bash
 python bacterial_strain_definition/00b_Python/02a_fastANI_scatter_pyGAM.py -i fastANI_Complete_All.ani -g True -r 10 -l True -o ANI_95_subsamples_r10_e100
