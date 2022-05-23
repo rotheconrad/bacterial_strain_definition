@@ -239,6 +239,6 @@ Fraction of A in B-G:
  - (A) / (F) = 0.0880
  - (A) / (G) = 0.2520
 
-# STEP 03 ## Dorian
+# STEP 03 ## MLST
 
-We can add dorians work here.
+Need to add specific commands but the mlst tools was run with default settings for E. coli and a few custom Python scripts were used to parse the output to compute the confusion matrix and output data tables and plots.
