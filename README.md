@@ -293,7 +293,7 @@ Take note of the follwing once ```plot_ST_ANI99.R``` is open is R-studio:
 ## Section 2:
 ### Prepare data frame for calulating precision, recall, F1-score and accuracy 
 
-*We use the full ANI dataset here to accutatly replresent the data when calulating these statistics*
+*We use the full ANI dataset here to accutatly represent the data when calulating these statistics*
 
 Using the origianl FastANI output, we will add the MLST data to each line:
 ```bash
