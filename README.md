@@ -265,7 +265,7 @@ Output file generated is called ```02d_fastANI_Complete_All.ani_parsed.ani``` an
 -Col4 = fragments\
 -Col5 = total\
 -Col6 = query_ST\
--Col7 = ST\
+-Col7 = ST *(reference ST but it was easier to just put ST)\
 -Col8 = proportion\
 
 ### Parse top four sequence types 
