@@ -69,7 +69,7 @@ def open_ANI_file(infile, mlst_dict):
     return ANI_dict
 
 def write_output(ANI_dict, ANI_raw):
-    outname = ANI_raw + '_parsed.ani'
+    outname = ANI_raw + '_prepaired.ani'
     print(f'Writing parsed data to {outname}')
     wf = open(outname, 'w')
     wf.write(f'query\treference\tANI\tfragments\ttotal\tquery_ST\tST\tproportion\n')
