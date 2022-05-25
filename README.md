@@ -288,6 +288,8 @@ Take note of the follwing once ```plot_ST_ANI99.R``` is open is R-studio:
 2. line10 - change ```file = ""```
 3. line16 - change the ST
 
+![Shared genome fraction vs ANI plot for St131 at 99% ANI.](/figures/github_st131.pdf)
+
 ## Section 2:
 ### Prepare data frame for calulating precision, recall, F1-score and accuracy 
 
