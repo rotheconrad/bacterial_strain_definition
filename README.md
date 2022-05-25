@@ -305,9 +305,9 @@ There are two main scripts for this:
 1. ```print_stats.py```
 2. ```stats_iterate_ANI.py``` 
 
-### Parse data by ST:
+### Parse data by top 14 sequence types:
 ```bash
-subset_ST.py 02d_fastANI_Complete_All.ani
+subset_ST.py 02d_fastANI_Complete_All.ani 73,11,93,10,131,95,127,48,648,410,167,38,405,69
 ```
 OUtput file generated is called ```02d_fastANI_Complete_All.ani_subset_MLSTs.ani```
 
@@ -315,7 +315,7 @@ OUtput file generated is called ```02d_fastANI_Complete_All.ani_subset_MLSTs.ani
 ```bash
 print_stats.py 02d_fastANI_Complete_All.ani_stats_file.ani 99.5
 ```
-Output print to stdout:
+Output print to stdout (Note: header will not print to stdout):
 
 |ST|Data-points|Precision|Recall|F1-score|Accuracy|
 |----|----|----|----|----|----| 
