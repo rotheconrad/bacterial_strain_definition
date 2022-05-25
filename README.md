@@ -241,14 +241,14 @@ Fraction of A in B-G:
 
 # STEP 03 ## MLST
 
-## Create Conda environment
+### Create Conda environment
 ```bash
 conda create -n mlst_env
 conda activate mlst_env
 conda install -c bioconda mlst
 ```
 
-## Run mlst on all *E. coli* fasta files and save to a single file
+### Run mlst on all *E. coli* fasta files and save to a single file
 ```bash
 mlst --scheme ecoli *.fasta > Ecoli_NBCI_mlst.tsv
 ```
