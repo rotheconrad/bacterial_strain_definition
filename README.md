@@ -239,7 +239,11 @@ Fraction of A in B-G:
  - (A) / (F) = 0.0880
  - (A) / (G) = 0.2520
 
-# STEP 03 ## MLST
+# STEP 03: MLST
+
+There are two parts to this section:\
+1. Prepare the data from ploting the propotion of fragments vs ANI
+2. Calulating precision, recall, F1-score and accuracy for either a single ANI value or iteravely over a range of ANI values.
 
 ### Create Conda environment
 ```bash
@@ -253,8 +257,8 @@ conda install -c bioconda mlst
 mlst --scheme ecoli *.fasta > Ecoli_NBCI_mlst.tsv
 ```
 
-### Prepare data frame by combine FastANI and MLST data
-This script removes reciprical matches, calculates proporiton of fragments, and removes smaller genome between pairwise comparisons fomr teh fastANI output and merges the MLST data generated in teh previous step.
+### Prepare data frame for plots
+This script removes reciprical matches, calculates proporiton of fragments, and removes smaller genome between pairwise comparisons from the original fastANI output and merges the MLST data generated in teh previous step.  This script is intended only for preping the data for plotting the proportion of fragments vs ANI.
 ```bash
 python3 prepare_fastANI_MLST_data.py 02d_fastANI_Complete_All.ani Ecoli_NBCI_mlst.tsv
 ```
