@@ -295,7 +295,7 @@ Take note of the follwing once ```plot_ST_ANI99.R``` is open is R-studio:
 
 *We use the full ANI dataset here to accutatly replresent the data when calulating these statistics*
 
-Using the origianl FastANI output
+Using the origianl FastANI output, we will add the MLST data to each line:
 ```bash
 python3 add_MLST_to_full_ANI_file.py 02d_fastANI_Complete_All.ani
 ```
@@ -304,5 +304,34 @@ Output file name is: ```02d_fastANI_Complete_All.ani_stats_file.ani```
 There are two main scripts for this:
 1. ```print_stats.py```
 2. ```stats_iterate_ANI.py``` 
+
+### Parse data by ST:
+```bash
+subset_ST.py 02d_fastANI_Complete_All.ani
+```
+OUtput file generated is called ```02d_fastANI_Complete_All.ani_subset_MLSTs.ani```
+
+### Calculate statistics for a single ANI value
+```bash
+print_stats.py 02d_fastANI_Complete_All.ani_stats_file.ani 99.5
+```
+Output print to stdout:
+|ST|Data-points|Precision|Recall|F1-score|Accuracy|
+|:---:| |:---:| |:---:| |:---:| |:---:| |:---:| 
+|ST-73|31488|100.0|100.0|100.0|100.0|
+|ST-11|214512|100.0|100.0|100.0|100.0|
+|ST-93|37392|100.0|87.13|93.12|99.52|
+|ST-10|224352|98.8|59.92|74.6|90.58|
+|ST-131|102336|100.0|74.87|85.63|97.37|
+|ST-95|41328|100.0|89.61|94.52|99.57|
+|ST-127|21648|100.0|100.0|100.0|100.0|
+|ST-48|31488|100.0|3.83|7.38|96.97|
+|ST-648|19680|100.0|66.58|79.94|99.35|
+|ST-410|58056|100.0|98.07|99.03|99.89|
+|ST-167|63960|93.3|84.42|88.64|98.59|
+|ST-38|60024|100.0|69.48|81.99|98.14|
+|ST-405|34440|100.0|99.58|99.79|99.99|
+|ST-69|28536|100.0|66.5|79.88|99.05|
+
 
 
