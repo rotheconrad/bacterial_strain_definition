@@ -258,5 +258,5 @@ mlst --scheme ecoli *.fasta > Ecoli_NBCI_mlst.tsv
 ```bash
 python3 parse_fastANI_data.py <ANI_file> <MLST_file>
 ```
-ANI_file is the original fastANI outout. 
+ANI_file is the original fastANI outout\
 MLST_file is the Ecoli_NBCI_mlst.tsv. 
