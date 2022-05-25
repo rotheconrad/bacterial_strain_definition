@@ -305,7 +305,7 @@ There are two main scripts for this:
 1. ```print_stats.py```
 2. ```stats_iterate_ANI.py``` 
 
-### Parse data by top 14 sequence types:
+### Parse data by top 14 sequence types using ```print_stats.py```:
 ```bash
 subset_ST.py 02d_fastANI_Complete_All.ani 73,11,93,10,131,95,127,48,648,410,167,38,405,69
 ```
