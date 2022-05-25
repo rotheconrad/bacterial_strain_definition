@@ -252,3 +252,11 @@ conda install -c bioconda mlst
 ```bash
 mlst --scheme ecoli *.fasta > Ecoli_NBCI_mlst.tsv
 ```
+
+### Combine FastANI output with MLST data
+#### Removes reciprical matches, calculates proporiton of fragments, removes smaller genomes between ANI
+```bash
+python3 parse_fastANI_data.py <ANI_file> <MLST_file>
+'''
+ANI_file is the original fastANI outout 
+MLST_file is the Ecoli_NBCI_mlst.tsv 
