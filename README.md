@@ -317,11 +317,11 @@ First we will look at a single ANI point to calculate the statistics
 
 ### Calculate statistics for a single ANI value using ```print_stats.py```
 
-For the second argument, you may change the ANI value to any number from 90-100
+For the second argument, you may change the ANI value to any number from 90-100.  For this demonstration, I have chosen 99.5
 ```bash
 print_stats.py 02d_fastANI_Complete_All.ani_stats_file.ani 99.5
 ```
-Output print to stdout (Note: header will not print to stdout):
+Output will print to stdout (Note: header will not print to stdout):
 
 |ST|Data-points|Precision|Recall|F1-score|Accuracy|
 |----|----|----|----|----|----| 
