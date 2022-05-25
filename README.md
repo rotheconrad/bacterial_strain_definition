@@ -241,4 +241,9 @@ Fraction of A in B-G:
 
 # STEP 03 ## MLST
 
-Need to add specific commands but the mlst tools was run with default settings for E. coli and a few custom Python scripts were used to parse the output to compute the confusion matrix and output data tables and plots.
+'''bash
+conda create -n mlst_env
+cd mlst_env
+conda install -c bioconda mlst
+mlst --scheme ecoli \*fasta > Ecoli_NBCI_mlst.tsv
+'''
