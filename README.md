@@ -280,8 +280,7 @@ subset_ST.py 02d_fastANI_Complete_All.ani_prepaired.ani 10,11,131,167
 Output file generated is called ```02d_fastANI_Complete_All.ani_prepaired.ani_subset_MLSTs.ani```
 
 ### Plot each Sequence Type in R
-*!Work in progress!*
-In order to generate each plot for a given ST, it is recommended to used R-Studio with this script ```plot_ST_ANI99.R``` as of now.  
-In the future, this script will run on command line as the previous scripts.
+*!Work in progress!*\
+In order to generate each plot for a given ST, it is recommended to used R-Studio with this script ```plot_ST_ANI99.R``` as of now. In the future, this script will run on command line as the previous scripts.
 
 
