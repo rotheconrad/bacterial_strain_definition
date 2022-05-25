@@ -254,9 +254,14 @@ mlst --scheme ecoli *.fasta > Ecoli_NBCI_mlst.tsv
 ```
 
 ### Prepare data frame by combine FastANI and MLST data
-#### Removes reciprical matches, calculates proporiton of fragments, and removes smaller genomes between pairwise comparisons
+This script removes reciprical matches, calculates proporiton of fragments, and removes smaller genome between pairwise comparisons fomr teh fastANI output and merges the MLST data generated in teh previous step.
 ```bash
 python3 parse_fastANI_data.py 02d_fastANI_Complete_All.ani Ecoli_NBCI_mlst.tsv
 ```
-Output file generated is ```02d_fastANI_Complete_All.ani_parsed.ani```
+Output file generated is called ```02d_fastANI_Complete_All.ani_parsed.ani```
+
+### Pares top four sequence types 
+```bash
+get_proper_STs.py 02d_fastANI_Complete_All.ani_parsed.ani 10,11,131,167
+```
 
