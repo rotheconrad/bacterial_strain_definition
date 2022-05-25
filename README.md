@@ -301,17 +301,23 @@ python3 add_MLST_to_full_ANI_file.py Ecoli_NBCI_mlst.tsv 02d_fastANI_Complete_Al
 ```
 Output file name is: ```02d_fastANI_Complete_All.ani_stats_file.ani```
 
-There are two main scripts for this:
-1. ```print_stats.py```
-2. ```stats_iterate_ANI.py``` 
+Then we will parse the data 
 
 ### Parse data by top 14 sequence types:
 ```bash
 subset_ST.py 02d_fastANI_Complete_All.ani 73,11,93,10,131,95,127,48,648,410,167,38,405,69
 ```
-OUtput file generated is called ```02d_fastANI_Complete_All.ani_subset_MLSTs.ani```
+Output file generated is called ```02d_fastANI_Complete_All.ani_subset_MLSTs.ani```
+
+There are two main scripts we will use moving forward:
+1. ```print_stats.py```
+2. ```stats_iterate_ANI.py``` 
+
+First we will look at a single ANI point to calculate the statistics
 
 ### Calculate statistics for a single ANI value using ```print_stats.py```
+
+For the second argument, you may change the ANI value to any number from 90-100
 ```bash
 print_stats.py 02d_fastANI_Complete_All.ani_stats_file.ani 99.5
 ```
