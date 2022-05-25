@@ -256,7 +256,7 @@ conda install -c bioconda mlst
 ```bash
 mlst --scheme ecoli *.fasta > Ecoli_NBCI_mlst.tsv
 ```
-
+## Section 1:
 ### Prepare data frame for plots
 This script removes reciprical matches, calculates proporiton of fragments, and removes smaller genome between pairwise comparisons from the original fastANI output and merges the MLST data generated in teh previous step.  This script is intended only for preping the data for plotting the proportion of fragments vs ANI.
 ```bash
@@ -281,6 +281,26 @@ Output file generated is called ```02d_fastANI_Complete_All.ani_prepaired.ani_su
 
 ### Plot each Sequence Type in R
 *!Work in progress!*\
-In order to generate each plot for a given ST, it is recommended to used R-Studio with this script ```plot_ST_ANI99.R``` as of now. In the future, this script will run on command line as the previous scripts.
+In order to generate each plot for a given ST, it is recommended to used R-Studio with this script ```plot_ST_ANI99.R``` as of now. In the future, this script will run on command line and take the modified ANI/MLST file as input.
+
+Take note of the follwing once ```plot_ST_ANI99.R``` is open is R-studio:
+1. line8 - change ```setwd()```
+2. line10 - change ```file = ""```
+3. line16 - change the ST
+
+## Section 2:
+### Prepare data frame for calulating precision, recall, F1-score and accuracy 
+
+*We use the full ANI dataset here to accutatly replresent the data when calulating these statistics*
+
+Using the origianl FastANI output
+```bash
+python3 add_MLST_to_full_ANI_file.py 02d_fastANI_Complete_All.ani
+```
+Output file name is: ```02d_fastANI_Complete_All.ani_stats_file.ani```
+
+There are two main scripts for this:
+1. ```print_stats.py```
+2. ```stats_iterate_ANI.py``` 
 
 
