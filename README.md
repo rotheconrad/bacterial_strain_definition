@@ -243,7 +243,7 @@ Fraction of A in B-G:
 
 ```bash
 conda create -n mlst_env
-cd mlst_env
+conda activate mlst_env
 conda install -c bioconda mlst
 mlst --scheme ecoli \*fasta > Ecoli_NBCI_mlst.tsv
 ```
