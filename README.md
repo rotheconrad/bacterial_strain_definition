@@ -259,14 +259,14 @@ This script removes reciprical matches, calculates proporiton of fragments, and 
 python3 prepare_fastANI_MLST_data.py 02d_fastANI_Complete_All.ani Ecoli_NBCI_mlst.tsv
 ```
 Output file generated is called ```02d_fastANI_Complete_All.ani_parsed.ani``` and will generate a header with \
--Col1 = query
--Col2 = reference
--Col3 = ANI
--Col4 = fragments
--Col5 = total
--Col6 = query_ST
--Col7 = ST	
--Col8 = proportion
+-Col1 = query\
+-Col2 = reference\
+-Col3 = ANI\
+-Col4 = fragments\
+-Col5 = total\
+-Col6 = query_ST\
+-Col7 = ST\
+-Col8 = proportion\
 
 ### Parse top four sequence types 
 ```bash
