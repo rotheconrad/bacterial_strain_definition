@@ -297,7 +297,7 @@ Take note of the follwing once ```plot_ST_ANI99.R``` is open is R-studio:
 
 Using the origianl FastANI output, we will add the MLST data to each line:
 ```bash
-python3 add_MLST_to_full_ANI_file.py 02d_fastANI_Complete_All.ani
+python3 add_MLST_to_full_ANI_file.py Ecoli_NBCI_mlst.tsv 02d_fastANI_Complete_All.ani
 ```
 Output file name is: ```02d_fastANI_Complete_All.ani_stats_file.ani```
 
