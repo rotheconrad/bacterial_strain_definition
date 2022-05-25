@@ -315,10 +315,10 @@ OUtput file generated is called ```02d_fastANI_Complete_All.ani_subset_MLSTs.ani
 ```bash
 print_stats.py 02d_fastANI_Complete_All.ani_stats_file.ani 99.5
 ```
-Output print to stdout:\
+Output print to stdout:
 
 |ST|Data-points|Precision|Recall|F1-score|Accuracy|
-|:----:| |:----:| |:----:| |:----:| |:----:| |:----:| 
+|----|----|----|----|----|----| 
 |ST-73|31488|100.0|100.0|100.0|100.0|
 |ST-11|214512|100.0|100.0|100.0|100.0|
 |ST-93|37392|100.0|87.13|93.12|99.52|
