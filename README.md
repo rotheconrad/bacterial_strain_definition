@@ -245,5 +245,5 @@ Fraction of A in B-G:
 conda create -n mlst_env
 conda activate mlst_env
 conda install -c bioconda mlst
-mlst --scheme ecoli \*fasta > Ecoli_NBCI_mlst.tsv
+mlst --scheme ecoli *.fasta > Ecoli_NBCI_mlst.tsv
 ```
