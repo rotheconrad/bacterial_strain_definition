@@ -293,7 +293,7 @@ Take note of the follwing once ```plot_ST_ANI99.R``` is open is R-studio:
 ## Section 2:
 ### Prepare data frame for calulating precision, recall, F1-score and accuracy 
 
-*We use the full ANI dataset here to accutatly represent the data when calulating these statistics*
+*We use the full pairwise comparison ANI dataset here to accutatly represent the data when calulating these statistics*
 
 Using the origianl FastANI output, we will add the MLST data to each line:
 ```bash
@@ -340,6 +340,14 @@ Output will print to stdout (Note: header will not print to stdout):
 |ST-405|34440|100.0|99.58|99.79|99.99|
 |ST-69|28536|100.0|66.5|79.88|99.05|
 
-### Calculate statistics oer a range of ANI value using ```stats_iterate_ANI.py```
+### Calculate statistics over a range of ANI value using ```stats_iterate_ANI.py```
 
+Using the file we generateing in above:
+```bash
+python3 stats_iterate_ANI.py 02d_fastANI_Complete_All.ani_subset_MLSTs.ani 96 > 02d_fastANI_Complete_All.ani_subset_MLSTs_iterate_ANI.ani
+```
+Output will print to stdout if you do not use the redirection opperator
 
+### Plot each Sequence Type in R for plotting F1-score and Accuracy 
+*!Work in progress!*\
+In order to generate each plot, it is recommended to used R-Studio with this script ```f1score_vs_ani.R``` as of now. In the future, this script will run on command line and take the data file as input.
