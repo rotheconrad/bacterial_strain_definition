@@ -1,6 +1,8 @@
 # A natural definition for a bacterial strain (May 2022)
 
-Contains the code and workflow for the bacterial strain definition paper with Kostas Kostantinidis
+Contains the code and workflow for the bacterial strain definition paper with Kostas Kostantinidis.
+
+Preprint up at: https://www.biorxiv.org/content/10.1101/2022.06.27.497766v1
 
 # Required dependencies
 
