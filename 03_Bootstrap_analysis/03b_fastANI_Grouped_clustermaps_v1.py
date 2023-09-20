@@ -120,6 +120,7 @@ def plot_species_bin_density(ANIs, min_ani, outpre):
 
     for species, anis in ANIs.items():
         # skip species if fewer than 45 pairwise comparisons above 95% ANI.
+        # this comes from the dict created from the parse_fastani function.
         if len(anis) < 45: continue
         # filter ani set to min_ani
         fanis = [i for i in anis if i >= min_ani]
