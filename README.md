@@ -403,4 +403,6 @@ In order to generate each plot, it is recommended to used R-Studio with this scr
 
 # STEP 03: Bootstrapped local minimum analysis
 
-Figures and code for this analysis on in the 03_Bootstrap_analyis folder. The input is the all vs. all fastANI matrix used in step 01. The various scripts partition and subsample this data by species or local minimum signal.
+Figures and code for this analysis are in the 03_Bootstrap_analyis folder.
+
+The input is the all vs. all fastANI matrix used in step 01. The various scripts partition and subsample this data by species or local minimum signal.

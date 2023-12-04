@@ -116,7 +116,11 @@ def plot_species_bin_density(ANIs, min_ani, outpre):
 
     binset = np.round(np.arange(min_ani-0.1, 100.1, 0.1), 1)
 
-    hiANI, loANI_A, loANI_B = {}, {}, {}
+    # hiANI is species mean ANI ≥ 99.5
+    # loANI_A is species has a local minimum in range [99.2-99.8]
+    # loANI_B is species has a local maximum in range [99.2-99.8]
+    # loANI_C is species without local min or max in [99.2-99.8]
+    hiANI, loANI_A, loANI_B,loANI_C = {}, {}, {}, {}
 
     for species, anis in ANIs.items():
         # skip species if fewer than 45 pairwise comparisons above 95% ANI.
@@ -138,6 +142,7 @@ def plot_species_bin_density(ANIs, min_ani, outpre):
         valleys = sorted(x[yv[0]], reverse=True)
         # select any valleys in the "gap" range.
         vly = [i for i in valleys if i <= 99.8 and i >= 99.2]
+        pks = [i for i in peaks if i <= 99.8 and i >= 99.2]
         # sort by mean ANI value
         mean_ani = np.mean(fanis)
         # replace species name '_' with space
@@ -155,9 +160,13 @@ def plot_species_bin_density(ANIs, min_ani, outpre):
             if len(vly) >= 1:
                 # normalize counts to frequency and convert to percent
                 loANI_A[name] = (count/len(fanis)) * 100
-            else: # loANI B will not have any valleys in vly
-                # normalize counts to frequency and convert to percent
-                loANI_B[name] = (count/len(fanis)) * 100
+            else: # loANI B will not have any valleys in vly but will have peak
+                if len(pks) >= 1:
+                    # normalize counts to frequency and convert to percent
+                    loANI_B[name] = (count/len(fanis)) * 100
+                else:
+                    # no peak or valley or in range [99.2-99.8]
+                    loANI_C[name] = (count/len(fanis)) * 100
         
     # hiANI group plot
     # create df
@@ -202,6 +211,20 @@ def plot_species_bin_density(ANIs, min_ani, outpre):
                         col_cluster=False
                         )
     outfile = f'{outpre}_loANI_B_histclust.pdf'
+    g.savefig(outfile)
+    plt.close()
+
+    # loANI group C plot
+    # create df
+    df = pd.DataFrame(loANI_C, index=binset[1:])
+    print(f'\t\tNon-clonal pattern C species: {len(df.columns)}')
+    g = sns.clustermap(
+                        df.T, figsize=(36,48),
+                        xticklabels=True,
+                        yticklabels=True,
+                        col_cluster=False
+                        )
+    outfile = f'{outpre}_loANI_C_histclust.pdf'
     g.savefig(outfile)
     plt.close()
 
