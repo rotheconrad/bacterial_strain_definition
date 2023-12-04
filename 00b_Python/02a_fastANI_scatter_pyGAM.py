@@ -641,7 +641,7 @@ def main():
     # test params
     if not all_species and not single_species:
         print(
-            '\nNo option specified. Please set -s, -a or both to True.\n\n'
+            '\nNo option specified. Please set -s, -l or both to True.\n\n'
             )
         sys.exit(1)
 

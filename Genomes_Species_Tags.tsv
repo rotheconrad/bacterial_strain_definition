@@ -1,0 +1,338 @@
+Genome	clinical/environmental	human/animal/etc	Additional tags			
+Actinobacillus pleuropneumoniae	clinical	animal				
+Bordetella bronchiseptica	clinical	animal				
+Bordetella hinzii	clinical	animal				
+Corynebacterium pseudotuberculosis	clinical	animal				
+Coxiella burnetii	clinical	animal				
+Erysipelothrix rhusiopathiae	clinical	animal				
+Leptospira interrogans	clinical	animal				
+Mannheimia haemolytica	clinical	animal				
+Mycoplasma capricolum	clinical	animal				
+Mycoplasma gallisepticum	clinical	animal	bird			
+Mycoplasma mycoides	clinical	animal	ruminants			
+Aeromonas salmonicida	clinical	animal	fish			
+Aeromonas veronii	clinical	animal	fish			
+Avibacterium paragallinarum	clinical	animal	poultry			
+Bartonella krasnovii	clinical	animal				
+Bifidobacterium breve	clinical	animal	industrial	probiotic		
+Brucella suis	clinical	animal				
+Burkholderia mallei	clinical	animal	human			
+Chlamydia muridarum	clinical	animal				
+Ehrlichia ruminantium	clinical	animal	human	livestock		
+Flavobacterium columnare	clinical	animal	fish			
+Flavobacterium psychrophilum	clinical	animal	fish			
+Glaesserella parasuis	clinical	animal	swine			
+Histophilus somni	clinical	animal	cattle			
+Lactococcus garvieae	clinical	animal	fish			
+Mycoplasmopsis bovis	clinical	animal	cow			
+Mycoplasmopsis synoviae	clinical	animal	chicken			
+Photobacterium damselae	clinical	animal	fish			
+Piscirickettsia salmonis	clinical	animal	fish			
+Rhodococcus equi	clinical	animal	live stock			
+Riemerella anatipestifer	clinical	animal	duck			
+Vibrio anguillarum	clinical	animal	fish			
+Vibrio campbellii	clinical	animal	fish			
+Providencia stuartii	clinical	environmental	opportunistic pathogen	industrial	restriction endonuclease	
+Pseudomonas stutzeri	clinical	environmental				
+Francisella orientalis	clinical	fish				
+Acinetobacter baumannii	clinical	human				
+Acinetobacter haemolyticus	clinical	human				
+Acinetobacter johnsonii	clinical	human				
+Acinetobacter junii	clinical	human				
+Acinetobacter nosocomialis	clinical	human				
+Acinetobacter pittii	clinical	human				
+Acinetobacter seifertii	clinical	human				
+Acinetobacter sp.	clinical	human				
+Akkermansia muciniphila	clinical	human				
+Bacillus anthracis	clinical	human				
+Bacillus cytotoxicus	clinical	human				
+Bacteroides fragilis	clinical	human				
+Bartonella henselae	clinical	human				
+Bordetella holmesii	clinical	human				
+Bordetella parapertussis	clinical	human				
+Bordetella pertussis	clinical	human				
+Borrelia miyamotoi	clinical	human				
+Borreliella burgdorferi	clinical	human				
+Brucella melitensis	clinical	human				
+Campylobacter coli	clinical	human				
+Campylobacter fetus	clinical	human				
+Campylobacter jejuni	clinical	human				
+Campylobacter lari	clinical	human				
+Campylobacter sp.	clinical	human				
+Chlamydia abortus	clinical	human				
+Chlamydia pneumoniae	clinical	human				
+Chlamydia psittaci	clinical	human				
+Chlamydia trachomatis	clinical	human				
+Chryseobacterium indologenes	clinical	human				
+Citrobacter amalonaticus	clinical	human				
+Citrobacter freundii	clinical	human	environmental			
+Citrobacter koseri	clinical	human				
+Citrobacter sp.	clinical	human	environmental			
+Clostridioides difficile	clinical	human				
+Clostridium botulinum	clinical	human				
+Clostridium butyricum	clinical	human				
+Clostridium perfringens	clinical	human				
+Corynebacterium diphtheriae	clinical	human				
+Corynebacterium ulcerans	clinical	human	animal			
+Cronobacter sakazakii	clinical	human				
+Cutibacterium acnes	clinical	human				
+Dolosigranulum pigrum	clinical	human				
+Eggerthella lenta	clinical	human				
+Enterobacter asburiae	clinical	human	environmental			
+Enterobacter cloacae	clinical	human				
+Enterobacter kobei	clinical	human				
+Enterobacter ludwigii	clinical	human				
+Enterobacter roggenkampii	clinical	human				
+Enterobacter sp.	clinical	human				
+Enterococcus faecalis	clinical	human				
+Enterococcus faecium	clinical	human				
+Enterococcus hirae	clinical	human	animal			
+Escherichia albertii	clinical	human				
+Escherichia coli	clinical	human				
+Faecalibacterium prausnitzii	clinical	human				
+Francisella tularensis	clinical	human				
+Fusobacterium nucleatum	clinical	human				
+Granulibacter bethesdensis	clinical	human				
+Haemophilus ducreyi	clinical	human				
+Haemophilus influenzae	clinical	human				
+Haemophilus parainfluenzae	clinical	human				
+Helicobacter cinaedi	clinical	human	animal			
+Helicobacter pylori	clinical	human				
+Klebsiella aerogenes	clinical	human	environmental			
+Klebsiella grimontii	clinical	human				
+Klebsiella michiganensis	clinical	human				
+Klebsiella oxytoca	clinical	human				
+Klebsiella pneumoniae	clinical	human				
+Klebsiella quasipneumoniae	clinical	human				
+Klebsiella sp.	clinical	human				
+Leclercia adecarboxylata	clinical	human				
+Legionella pneumophila	clinical	human				
+Leptospira noguchii	clinical	human				
+Leuconostoc mesenteroides	clinical	human	environmental			
+Listeria innocua	clinical	human	environmental			
+Listeria monocytogenes	clinical	human				
+Massilia sp.	clinical	human				
+Metamycoplasma hominis	clinical	human				
+Moraxella catarrhalis	clinical	human				
+Moraxella osloensis	clinical	human				
+Morganella morganii	clinical	human	animal			
+Mycobacterium avium	clinical	human				
+Mycobacterium tuberculosis	clinical	human				
+Mycobacteroides abscessus	clinical	human	environmental			
+Mycolicibacterium smegmatis	clinical	human				
+Mycoplasma pneumoniae	clinical	human				
+Neisseria gonorrhoeae	clinical	human				
+Neisseria meningitidis	clinical	human				
+Parabacteroides distasonis	clinical	human				
+Pasteurella multocida	clinical	human				
+Porphyromonas gingivalis	clinical	human				
+Prevotella intermedia	clinical	human				
+Prevotella melaninogenica	clinical	human				
+Prevotella sp.	clinical	human				
+Proteus mirabilis	clinical	human	environmental			
+Proteus terrae	clinical	human				
+Proteus vulgaris	clinical	human				
+Pseudomonas aeruginosa	clinical	human				
+Psychrobacter sp.	clinical	human	environmental			
+Raoultella ornithinolytica	clinical	human	environmental			
+Salmonella bongori	clinical	human	environmental			
+Salmonella enterica	clinical	human	environmental			
+Salmonella sp.	clinical	human	environmental			
+Serratia marcescens	clinical	human	environmental			
+Serratia plymuthica	clinical	human	environmental			
+Serratia sp.	clinical	human	environmental			
+Shigella boydii	clinical	human				
+Shigella dysenteriae	clinical	human				
+Shigella flexneri	clinical	human				
+Staphylococcus argenteus	clinical	human				
+Staphylococcus aureus	clinical	human				
+Staphylococcus epidermidis	clinical	human				
+Staphylococcus haemolyticus	clinical	human				
+Staphylococcus lugdunensis	clinical	human				
+Staphylococcus pseudintermedius	clinical	human				
+Staphylococcus saprophyticus	clinical	human				
+Staphylococcus sp.	clinical	human				
+Staphylococcus warneri	clinical	human				
+Streptococcus agalactiae	clinical	human				
+Streptococcus anginosus	clinical	human				
+Streptococcus dysgalactiae	clinical	human				
+Streptococcus gordonii	clinical	human				
+Streptococcus pneumoniae	clinical	human				
+Streptococcus pyogenes	clinical	human				
+Streptococcus sp.	clinical	human				
+Trueperella pyogenes	clinical	human				
+Ureaplasma parvum	clinical	human				
+Vibrio cholerae	clinical	human				
+Yersinia enterocolitica	clinical	human				
+Yersinia pestis	clinical	human				
+Yersinia pseudotuberculosis	clinical	human				
+Yersinia ruckeri	clinical	human				
+Actinomyces sp.	clinical	human				
+Aeromonas caviae	clinical	human	animal	environmental		
+Aeromonas hydrophila	clinical	human	environmental	water brackish reservoirs		
+Aeromonas media	clinical	human	animal	environmental	aquatic	
+Aeromonas sp.	clinical	human	environmental			
+Bifidobacterium animalis	clinical	human	animal			
+Bifidobacterium bifidum	clinical	human	industrial	probiotic		
+Bifidobacterium longum	clinical	human	industrial	probiotic		
+Brucella abortus	clinical	human	animal			
+Brucella sp.	clinical	human	animal			
+Burkholderia cenocepacia	clinical	human	opportunistic	environmental		
+Burkholderia cepacia	clinical	human	opportunistic	environmental		
+Burkholderia multivorans	clinical	human				
+Burkholderia thailandensis	clinical	human	environmental	soil		
+Campylobacter concisus	clinical	human				
+Edwardsiella piscicida	clinical	human	fish	animal	aquatic	
+Elizabethkingia anophelis	clinical	human	environmental	soil	river water	reservoirs
+Enterobacter hormaechei	clinical	human				
+Escherichia fergusonii	clinical	human	blood			
+Klebsiella variicola	clinical	human	animal	plant		
+Mycobacterium intracellulare	clinical	human				
+Providencia alcalifaciens	clinical	human	animal			
+Providencia rettgeri	clinical	human	emerging			
+Rickettsia japonica	clinical	human	tick-borne	japanese spotted fever		
+Rickettsia prowazekii	clinical	human	louse-borne	epidemic typhus		
+Rickettsia rickettsii	clinical	human	tick-borne	rocky mountain spotted fever		
+Stenotrophomonas maltophilia	clinical	human				
+Streptococcus equi	clinical	human	animal			
+Streptococcus mutans	clinical	human	tooth decay			
+Streptococcus oralis	clinical	human	oral cavity			
+Streptococcus salivarius	clinical	human	oral cavity	upper respiratory	probiotic	
+Streptococcus suis	clinical	human	pigs			
+Vibrio alginolyticus	clinical	human				
+Vibrio fluvialis	clinical	human				
+Vibrio parahaemolyticus	clinical	human				
+Vibrio sp.	clinical	human				
+Vibrio vulnificus	clinical	human				
+Weissella cibaria	clinical	human				
+Candidatus Liberibacter	clinical	insect	plant	aphid	citrus	
+Paenibacillus larvae	clinical	insect	honeybee			
+Agrobacterium tumefaciens	clinical	plant				
+Dickeya dianthicola	clinical	plant	potato			
+Dickeya solani	clinical	plant	potato			
+Dickeya zeae	clinical	plant				
+Erwinia amylovora	clinical	plant				
+Pantoea agglomerans	clinical	plant	antimicrobial	opportunistic pathogen		
+Pantoea ananatis	clinical	plant				
+Pseudomonas syringae	clinical	plant				
+Ralstonia solanacearum	clinical	plant				
+Xanthomonas arboricola	clinical	plant				
+Xanthomonas campestris	clinical	plant				
+Xanthomonas citri	clinical	plant				
+Xanthomonas phaseoli	clinical	plant				
+Xanthomonas translucens	clinical	plant				
+Xylella fastidiosa	clinical	plant				
+Xylella taiwanensis	clinical	plant				
+Bacillus altitudinis	environmental	air				
+Blattabacterium cuenoti	environmental	animal				
+Buchnera aphidicola	environmental	aphid endosymbiont				
+Rhodococcus sp.	environmental	biodegradation				
+Lactobacillus helveticus	environmental	cheese	industrial			
+Lactococcus lactis	environmental	cheese	industrial	buttermilk		
+Propionibacterium freudenreichii	environmental	cheese	industrial			
+Candidatus Carsonella	environmental	endosymbiont	insect			
+Candidatus Portiera	environmental	endosymbiont	whiteflies			
+Candidatus Sulcia	environmental	endosymbiont	insect			
+Candidatus Planktophila	environmental	freshwater	bacterioplankton			
+Variovorax sp.	environmental	freshwater				
+Acetobacter pasteurianus	environmental	fruits				
+Halomonas sp.	environmental	halophilic				
+Thermus thermophilus	environmental	hot spring				
+Lacticaseibacillus paracasei	environmental	human	industrial	milk		xxxxxx
+Lacticaseibacillus rhamnosus	environmental	human	industrial	probiotic		
+Lactiplantibacillus plantarum	environmental	human	industrial	probiotic		
+Lactobacillus acidophilus	environmental	human	industrial	probiotic		
+Lactobacillus crispatus	environmental	human	industrial	probiotic		
+Lactobacillus delbrueckii	environmental	human	industrial	fermentation	probiotic	
+Lactobacillus gasseri	environmental	human	industrial	probiotic		
+Lactobacillus johnsonii	environmental	human	industrial	probiotic		
+Lactococcus cremoris	environmental	human	industrial	fermentation	probiotic	
+Latilactobacillus curvatus	environmental	human	industrial	probiotic		
+Ligilactobacillus salivarius	environmental	human	industrial	probiotic		
+Limosilactobacillus fermentum	environmental	human	fermentation	cavities		
+Limosilactobacillus reuteri	environmental	human	antimicrobial	health		
+Pediococcus acidilactici	environmental	human	probiotic	health		
+Bacillus amyloliquefaciens	environmental	industrial	soil			
+Bacillus thuringiensis	environmental	industrial	soil			
+Corynebacterium glutamicum	environmental	industrial				
+Dehalococcoides mccartyi	environmental	industrial	bioremediation			
+Deinococcus radiodurans	environmental	industrial	bioremediation	extremophile	radiation	
+Latilactobacillus sakei	environmental	industrial	anti-listerial	sausage		
+Levilactobacillus brevis	environmental	industrial	fermentation	probiotic		
+Pediococcus pentosaceus	environmental	industrial	antimicrobial			
+Pseudomonas chlororaphis	environmental	industrial	anti-fungal			
+Pseudomonas fluorescens	environmental	industrial	biocontrol			
+Pseudomonas protegens	environmental	industrial	biocontrol			
+Pseudomonas putida	environmental	industrial	bioremediation	biocontrol		
+Streptococcus thermophilus	environmental	industrial	yogurt	cheese		
+Zymomonas mobilis	environmental	industrial	ethanol production			
+Blattabacterium punctulatus	environmental	insect				
+Wolbachia endosymbiont	environmental	insect				
+Wolbachia pipientis	environmental	insect				
+Pseudoalteromonas sp.	environmental	marine				
+Alteromonas mediterranea	environmental	marine				
+Marinobacter sp.	environmental	marine				
+Phaeobacter inhibens	environmental	marine	symbiont	algae		
+Prochlorococcus marinus	environmental	marine				
+Shewanella algae	environmental	marine				
+Shewanella putrefaciens	environmental	marine	fish			
+Shewanella sp.	environmental	marine				
+Sulfitobacter pseudonitzschiae	environmental	marine				
+Sulfitobacter sp.	environmental	marine				
+Shewanella baltica	environmental	marine 	fish			
+Synechococcus sp.	environmental	marine 				
+Clavibacter michiganensis	environmental	plant				
+Pectobacterium brasiliense	environmental	plant				
+Pectobacterium carotovorum	environmental	plant				
+Pectobacterium parmentieri	environmental	plant				
+Stenotrophomonas sp.	environmental	plant	soil			
+Xanthomonas oryzae	environmental	plant	rice			
+Polaribacter sp.	environmental	psychrophilic				
+Arthrobacter sp.	environmental	soil				
+Bacillus cereus	environmental	soil				
+Bacillus licheniformis	environmental	soil				
+Bacillus mycoides	environmental	soil				
+Bacillus paralicheniformis	environmental	soil				
+Bacillus pumilus	environmental	soil				
+Bacillus sp.	environmental	soil				
+Bacillus subtilis	environmental	soil				
+Bacillus velezensis	environmental	soil				
+Bradyrhizobium diazoefficiens	environmental	soil	legume			
+Bradyrhizobium sp.	environmental	soil	legume			
+Burkholderia glumae	environmental	soil	plant	rice		
+Burkholderia pseudomallei	environmental	soil				
+Clostridium sp.	environmental	soil				
+Lysobacter sp.	environmental	soil	water			
+Mesorhizobium sp.	environmental	soil	root nodules			
+Paenibacillus polymyxa	environmental	soil	sediment			
+Rhizobium leguminosarum	environmental	soil	root nodules	legumes		
+Rhizobium phaseoli	environmental	soil	root nodules	legumes		
+Rhizobium sp.	environmental	soil	root nodules	legumes		
+Sinorhizobium meliloti	environmental	soil	industrial	nitrogenous fertilizers		
+Sphingobium sp.	environmental	soil				
+Streptomyces clavuligerus	environmental	soil				
+Streptomyces sp.	environmental	soil				
+Streptomyces venezuelae	environmental	soil				
+Micrococcus luteus	environmental	ubiquitous				
+Priestia megaterium	environmental	ubiquitous				
+Synechocystis sp.	environmental	ubiquitous				
+Acinetobacter indicus	environmental	waste				
+Polynucleobacter sp.	environmental	water				
+Nostoc sp.	environmental	water				
+Achromobacter xylosoxidans	environmental	wet				
+Alcaligenes faecalis	environmental					
+Chryseobacterium sp.	environmental					
+Citrobacter portucalensis	environmental					
+Flavobacterium sp.	environmental					
+Microbacterium sp.	environmental					
+Brevundimonas sp.	environmental					
+Burkholderia sp.	environmental					
+Corynebacterium sp.	environmental					
+Hymenobacter sp.	environmental					
+Mammaliicoccus sciuri	environmental					
+Myxococcus xanthus	environmental					
+Nocardioides sp.	environmental					
+Paenibacillus sp.	environmental					
+Pseudomonas sp.	environmental					
+Sphingomonas sp.	environmental					
+Weizmannia coagulans	environmental					
